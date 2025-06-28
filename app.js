@@ -5,6 +5,7 @@ const connectDB = require('./config/dataDb.js');
 const authRoutes = require('./routes/authRoutes.js');
 const clientsRoutes = require('./routes/clientsRoutes.js');
 const productsRoutes = require('./routes/productsRoutes.js');
+const ventasRoutes = require('./routes/ventasRoutes.js');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/clientes', clientsRoutes);
 app.use('/api/productos', productsRoutes);
+app.use('/api/ventas', ventasRoutes);
 
 connectDB();
 

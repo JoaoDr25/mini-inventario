@@ -28,7 +28,7 @@ exports.login = async (req, res) => {
         res.json({ token });
 
     } catch (error) {
-        console.error("🔴 Error en login:", error);
+        console.error("Error en login:", error);
         res.status(500).json({ message: 'Error al iniciar sesión', error });
     }
 };

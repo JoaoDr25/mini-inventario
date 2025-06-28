@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const protect = require('../middlewares/authMiddlewares');
 const { crearCliente, obtenerClientes, actualizarCliente, eliminarCliente } = require ('../controllers/clientsControllers');
 
-router.post('/', crearCliente);
-router.get('/', obtenerClientes);
-router.put('/:id', actualizarCliente);
-router.delete('/:id', eliminarCliente);
+router.post('/', protect, crearCliente);
+router.get('/', protect, obtenerClientes);
+router.put('/:id', protect, actualizarCliente);
+router.delete('/:id', protect, eliminarCliente);
 
 module.exports = router;
