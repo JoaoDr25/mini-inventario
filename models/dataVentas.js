@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const ventasSchema = new mongoose.Schema ({
+const ventasSchema = new mongoose.Schema({
     cliente: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Cliente',
         required: true
     },
-    productos : [
+    productos: [
         {
             producto: {
                 type: mongoose.Schema.Types.ObjectId,
@@ -27,7 +27,8 @@ const ventasSchema = new mongoose.Schema ({
     ],
     total: {
         type: Number,
-        required: true
+        required: true,
+        min: 0
     },
     fecha: {
         type: Date,
